@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <title>On Sell Activity！</title>
+  <link rel="icon" href="img/jiuzhanglogo.png">
+
+
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+  <link rel="stylesheet" type="text/css" href="css/all.css" />
+  <link rel="stylesheet" type="text/css" href="css/pages-seckill-index.css" />
+</head>
+
+<body>
+  <!-- NavBar -->
+
+  <div id="nav-bottom">
+
+    <div class="nav-top">
+      <div class="top">
+        <div class="py-container">
+          <div class="shortcut">
+            <ul class="fl">
+              <li class="f-item">Welcome！</li>
+              <li class="f-item">Please
+                <a href="login.html" target="_blank">Login</a>
+                <span>
+                  <a href="register.html" target="_blank">Register</a>
+                </span>
+              </li>
+            </ul>
+            <div class="fr typelist">
+              <ul class="types">
+                <li class="f-item">
+                  <span>My Order</span>
+                </li>
+
+                <li class="f-item">
+                  <span>
+                    <a href="cart.html" target="_blank">Cart</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="home.html" target="_blank">Home</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>Members</span>
+                </li>
+                <li class="f-item">
+                  <span>Enterprise Procument</span>
+                </li>
+                <li class="f-item">
+                  <span>Followup</span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="cooperation.html" target="_blank">Cooperation</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>
+                    <a href="shoplogin.html" target="_blank">Shoplogin</a>
+                  </span>
+                </li>
+                <li class="f-item">
+                  <span>Navigation</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--Head-->
+      <div class="header">
+        <div class="py-container">
+          <div class="yui3-g Logo">
+            <div class="yui3-u Left logoArea">
+              <a class="logo-bd" title="On Sell Activity" href="index.html" target="_blank"></a>
+            </div>
+            <div class="yui3-u Rit searchArea">
+              <div class="search">
+                <form action="" class="sui-form form-inline">
+                  <!--searchAutoComplete-->
+                  <div class="input-append">
+                    <input type="text" id="autocomplete" class="input-error input-xxlarge" />
+                    <button class="sui-btn btn-xlarge btn-danger" type="button">Search</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-container index">
+    <!--banner-->
+    <div class="banner">
+      <img src="img/_/banner.png" class="img-responsive" alt="">
+    </div>
+
+    <div class="sectime">
+      <div class="item-time active">
+        <div class="time-clock">12:00</div>
+        <div class="time-state-on">
+          <span class="on-text">On Sell Ongoing</span>
+          <span class="on-over">ending in ：01:02:34</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">14:00</div>
+        <div class="time-state-will">
+          <span>Wating to Start</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">16:00</div>
+        <div class="time-state-will">
+          <span>Wating to Start</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">18:00</div>
+        <div class="time-state-will">
+          <span>Wating to Start</span>
+        </div>
+      </div>
+      <div class="item-time">
+        <div class="time-clock">20:00</div>
+        <div class="time-state-will">
+          <span>Wating to Start</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="goods-list" id="app">
+      <ul class="seckill" id="seckill">
+        <tr th:each="seckillActivity : ${seckillActivities}">
+          <li class="seckill-item">
+            <div class="pic">
+              <img src="img/_/list.jpg" alt=''>
+            </div>
+            <div class="intro">
+              <span th:text="${seckillActivity.name}">Activity Name</span>
+            </div>
+            <div class='price'>
+              <b class='sec-price' th:text="'￥'+${seckillActivity.seckillPrice}"></b>
+              <b class='ever-price' th:text="'￥'+${seckillActivity.oldPrice}"></b>
+            </div>
+            <div class='num'>
+              <div>Sold 999</div>
+              <div class='progress'>
+                <div class='sui-progress progress-danger'>
+                  <span style='width: 70%;' class='bar'></span>
+                </div>
+              </div>
+              <div>剩余
+                <b class='owned'>999</b>件</div>
+            </div>
+            <a class='sui-btn btn-block btn-buy' th:href="@{'/item/'+${seckillActivity.id}}" target='_blank'>Add</a>
+          </li>
+        </tr>
+      </ul>
+    </div>
+    <div class="cd-top">
+      <div class="top">
+        <img src="img/_/gotop.png" />
+        <b>TOP</b>
+      </div>
+      <div class="code" id="code">
+        <span>
+          <img src="img/_/code.png" />
+        </span>
+      </div>
+      <div class="erweima">
+        <img src="img/_/erweima.jpg" alt="">
+        <s></s>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bottom -->
+
+  <div class="clearfix footer">
+    <div class="py-container">
+      <div class="footlink">
+        <div class="Mod-service">
+          <ul class="Mod-Service-list">
+            <li class="grid-service-item intro  intro1">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>正品保障，提供发票</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro2">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro  intro3">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro4">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro intro5">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix Mod-list">
+          <div class="yui3-g">
+            <div class="yui3-u-1-6">
+              <h4>Shopping Direction</h4>
+              <ul class="unstyled">
+                <li>Shopping Instruction</li>
+                <li>Member introduction</li>
+                <li>Life and Travelling</li>
+                <li>Question</li>
+                <li>Shopping Instruction</li>
+              </ul>
+
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Delivery</h4>
+              <ul class="unstyled">
+                <li>Pickup</li>
+                <li>UPS</li>
+                <li>Tracking</li>
+                <li>Delivery Fee</li>
+                <li>Oversea delivery</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Payment</h4>
+              <ul class="unstyled">
+                <li>In Store</li>
+                <li>Online</li>
+                <li>Installment</li>
+                <li>Check</li>
+                <li>Cancel Transaction</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Product Care</h4>
+              <ul class="unstyled">
+                <li>Policy</li>
+                <li>Price</li>
+                <li>Cancel Transaction Instruction</li>
+                <li>Repair</li>
+                <li>Cancel Transaction</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>特色服务</h4>
+              <ul class="unstyled">
+                <li>夺宝岛</li>
+                <li>DIY装机</li>
+                <li>延保服务</li>
+                <li>品优购E卡</li>
+                <li>品优购通信</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Help Center</h4>
+              <img src="img/erwei_jz.png">
+            </div>
+          </div>
+        </div>
+        <div class="Mod-copyright">
+          <ul class="helpLink">
+            <li>About us
+              <span class="space"></span>
+            </li>
+            <li>Contact us
+              <span class="space"></span>
+            </li>
+            <li>About us
+              <span class="space"></span>
+            </li>
+            <li>New Customer
+              <span class="space"></span>
+            </li>
+            <li>Marketing center
+              <span class="space"></span>
+            </li>
+            <li>Link
+              <span class="space"></span>
+            </li>
+            <li>About us
+              <span class="space"></span>
+            </li>
+            <li>Marketing center
+              <span class="space"></span>
+            </li>
+            <li>Link
+              <span class="space"></span>
+            </li>
+            <li>About us</li>
+          </ul>
+          <p>2013-2020</p>
+          <p>Coperation: 1234@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Bottom end-->
+  <!-- component -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+  <script src="https://cdn.bootcss.com/element-ui/2.5.4/index.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          goodslist: [{
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          },
+          {
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple苹果iPhone6 s 32 G金色 移动联通电信4G手机 ',
+            newprice: '6088 ',
+            oldprice: '6988 ',
+            rate: '87 % ',
+            left: '29 '
+          },
+          {
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile ',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }, {
+            intro: 'Apple iPhone 6s 32G Golden verizon4G mobile',
+            newprice: '6088',
+            oldprice: '6988',
+            rate: '87%',
+            left: '29'
+          }
+          ]
+        }
+      }
+    })
+  </script>
+
+
+
+</body>
+
+</html>

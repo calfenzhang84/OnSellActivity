@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" xmlns:th="http://www.thymeleaf.org">
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+  <title>秒杀活动发布</title>
+  <link rel="stylesheet" type="text/css" href="/css/all.css" />
+  <link rel="stylesheet" type="text/css" href="/css/pages-getOrderInfo.css" />
+</head>
+
+<body>
+  <!--NavBar-->
+
+  <div id="nav-bottom">
+
+    <div class="nav-top">
+      <div class="top">
+        <div class="py-container">
+          <div class="shortcut">
+            <ul class="fl">
+              <li class="f-item"></li>
+              <li class="f-item">Please<a href="login.html" target="_blank">Register</a>　<span><a href="register.html"
+                    target="_blank">login</a></span></li>
+            </ul>
+            <div class="fr typelist">
+              <ul class="types">
+                <li class="f-item"><span>My Order</span></li>
+
+                <li class="f-item"><span><a href="cart.html" target="_blank">Cart</a></span></li>
+                <li class="f-item"><span>Enterprise Procument</span></li>
+                <li class="f-item"><span><a href="cooperation.html" target="_blank">Cooperation</a></span></li>
+                <li class="f-item"><span><a href="shoplogin.html" target="_blank">Shoplogin</a></span></li>
+                <li class="f-item"><span>Navigation</span></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!--head-->
+      <div class="header">
+        <div class="py-container">
+          <div class="yui3-g Logo">
+            <div class="yui3-u Left logoArea">
+              <a class="logo-bd" title="青橙" href="index.html" target="_blank"></a>
+            </div>
+            <div class="yui3-u Rit searchArea">
+              <div class="search">
+                <form action="" class="sui-form form-inline">
+                  <!--searchAutoComplete-->
+                  <div class="input-append">
+                    <input type="text" id="autocomplete" class="input-error input-xxlarge" />
+                    <button class="sui-btn btn-xlarge btn-danger" type="button">Search</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart py-container" id="cart">
+    <!--Main-->
+    <div class="checkout py-container">
+      <div class="checkout-tit">
+        <h4 class="tit-txt">On Sell Activity Info</h4>
+      </div>
+      <div class="checkout-steps">
+        <div class="hr"></div>
+        <div class="payshipInfo">
+          <div class="hr"></div>
+          <div class="step-cont">
+            <ul class="send-detail">
+              <style>
+                .dialog-card {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+                }
+
+                .dialog-card>p {
+                  display: flex;
+                  flex-direction: row;
+                  min-width: 10rem;
+                }
+
+                .dialog-card>p>span {
+                  flex-grow: 1;
+                  text-align: center;
+                }
+              </style>
+              <div class="dialog-card">
+                <h1>Got Item Successfully </h1>
+                <p>On sell activity name：<span th:text="${seckillActivity.name}"></span></p>
+                <p>Orignal price：<span th:text="${seckillActivity.oldPrice}"></span></p>
+                <p>On sell price：<span th:text="${seckillActivity.seckillPrice}"></span></p>
+                <p>Number：<span th:text="${seckillActivity.availableStock}"></span></p>
+              </div>
+            </ul>
+          </div>
+          <div class="hr"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- bottom -->
+
+  <div class="clearfix footer">
+    <div class="py-container">
+      <div class="footlink">
+        <div class="Mod-service">
+          <ul class="Mod-Service-list">
+            <li class="grid-service-item intro  intro1">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro2">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro  intro3">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item  intro intro4">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+            <li class="grid-service-item intro intro5">
+
+              <i class="serivce-item fl"></i>
+              <div class="service-text">
+                <h4>Product Care</h4>
+                <p>Product Care Certificate</p>
+              </div>
+
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix Mod-list">
+          <div class="yui3-g">
+            <div class="yui3-u-1-6">
+              <h4>Shopping Direction</h4>
+              <ul class="unstyled">
+                <li>Shopping Instruction</li>
+                <li>Member introduction</li>
+                <li>Life and Travelling</li>
+                <li>Question</li>
+                <li>Shopping Instruction</li>
+              </ul>
+
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Delivery</h4>
+              <ul class="unstyled">
+                <li>Pickup</li>
+                <li>UPS</li>
+                <li>Tracking</li>
+                <li>Delivery Fee</li>
+                <li>Oversea delivery</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Payment</h4>
+              <ul class="unstyled">
+                <li>In Store</li>
+                <li>Online</li>
+                <li>Installment</li>
+                <li>Check</li>
+                <li>BillPay</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Product Care</h4>
+              <ul class="unstyled">
+                <li>Policy</li>
+                <li>Price</li>
+                <li>Cancel Transaction Instruction</li>
+                <li>Repair</li>
+                <li>Cancel Transaction</li>
+              </ul>
+            </div>
+            <div class="yui3-u-1-6">
+              <h4>Service</h4>
+              <ul class="unstyled">
+                <li>夺宝岛</li>
+                <li>DIY装机</li>
+                <li>延保服务</li>
+                <li>品优购E卡</li>
+                <li>品优购通信</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Bottom End-->
+  <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+
+  <script src="/js/vue.js"></script>
+  <script src="/js/axios.js"></script>
+</body>
+
+</html>
